@@ -1,0 +1,135 @@
+
+.btn {
+    color:blue;
+}
+.app-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    /* justify-content: center; */
+}
+.app-bar-title{
+    padding-left: 7px;
+}
+.update-component {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    padding: 10px 20px;
+    margin:10px;
+
+}
+.update-component:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.update-title {
+    font-weight: bold;
+}
+.update-version {
+    color:#424242;
+    font-weight: bold;
+    font-size: 1rem;
+    opacity: .8;
+}
+.update-component > ul {
+    padding-inline-start:20px;
+    margin-block-start: 0px;
+}
+.update-component > ul > li {
+    color:grey;
+    font-size: .8rem;
+}
+
+.bg-white {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-bottom-bg {
+    position:absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display:flex;
+    width: 100%;
+    height: 0;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    border:solid .2px #f4f4f4;
+
+}
+
+
+.modal-bottom-bg.active {
+    top: 0;
+    height: 100%;
+    /* -webkit-transform: translateY(0%);
+    transform: translateY(0%); */
+}
+
+/* CSS */
+/* 편의를 위해 임시로 버튼에 border값 추가 */
+/* 최종 CSS */
+.btn-menu {
+    position: relative;
+    display: none;
+    float: left;
+    width: 40px;
+    height: 40px;
+    /* border: 3px solid #000; */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.btn-menu.active {
+    display: block;
+}
+
+.btn-menu:before,
+.btn-menu:after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12.5px;
+    height: 2px;
+    background: #000;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-menu:before {
+    margin-top: -8px;
+}
+
+.btn-menu:after {
+    margin-top: 4px;
+}
+
+.btn-menu.active:before {
+    margin-top: 4px;
+    -webkit-transform: translateX(-50%) rotate(45deg) translateZ(0);
+    transform: translateX(-50%) rotate(45deg) translateZ(0);
+}
+
+.btn-menu.active:after {
+    margin-top: -4px;
+    -webkit-transform: translateX(-50%) rotate(-45deg) translateZ(0);
+    transform: translateX(-50%) rotate(-45deg) translateZ(0);
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+}
